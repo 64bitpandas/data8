@@ -2,11 +2,85 @@
 
 ![link](https://www.inferentialthinking.com/favicon.png)
 
-Lost in the sea of documentation? Don't know where to put np or are or really anything? You've come to the right place!!!
+Lost in the sea of documentation? Don't know where to put `np` or `are` or really anything? You've come to the right place!!!
 
-This is a really condensed version of the docs that will keep updating throughout the semester to highlight the most crucial functions at any given time.
+This is a really condensed version of the docs that will keep updating throughout the semester to highlight the most crucial functions at any given time. 
 
-Insert more content here.....
+Think of it as a happy medium between the [Python reference](http://data8.org/fa19/python-reference.html) and the [textbook](https://www.inferentialthinking.com/chapters/intro). At some point you'll probably want more info than the Python reference gives, but not quite at the level of the word-bombardment of the detailed textbook entries. 
+
+#### PSA: Something missing/unclear? Contribute to the cheat sheet!!! [Edit the text directly](https://github.com/64bitpandas/data8-cheat-sheet/edit/master/README.md) or [Create an issue](https://github.com/64bitpandas/data8-cheat-sheet/issues)!
+
+#### Also, this is very WIP right now. Check back in about a week or so and it'll be much more complete.
+
+## Hot Functions
+Stuff we just learned and is probably quite confuzzling at the moment.
+
+**Plotting a table's column as a line**
+```python
+# plots the column as the x axis. Every column after it will be lines.
+table.plot('column_name')
+```
+![plot example](./img/plot-multiple.png)
+
+#can also plot by x,y. Makes a single line
+table.plot('x_column','y_column')
+```
+**Plotting a table's column as a scatter plot**
+
+
+## Table Operations
+
+**Creating a table:**
+```python
+# both are equivalent
+tbl = Table.read_table('tablename.csv')
+tbl = Table().read_table('tablename.csv')
+```
+
+**Converting a table column into an array:**
+```python
+arr = tbl.column('column name')
+```
+
+**Creating a table column from an array:**
+```python
+# Remember to re-assign the original table if you want the new table to be saved!
+tbl = tbl.with_column('column name', arr)
+
+# Make as many columns as you want in a single function call!
+tbl = tbl.with_columns('first column', arr1, 'second column', arr2, ... ,'nth column', arr_n)
+```
+
+**Getting specific rows or columns from a table**
+```python
+# ROW
+first_row_only = tbl.
+```
+
+## np aka "numpy"
+**Creating an array which is a range of numbers**
+```python
+# Makes a range that goes from n1 to n2. Can optionally increment by n3. 
+# n1, n2, n3 are all integers
+arr_range = np.arange(n1,n2,n3=1)
+```
+**Calculating an average value / mean from a given array**
+```python
+np.average(array)
+```
+**Creating a new array that is the difference between sequential elements in a given array**
+```python
+#len of returned array is len(array)-1
+# a=a-b
+# b=b-c
+# ...
+np.diff(array)
+```
+**Creating a new array with elements that are in the form of (current element + all previous elements)**
+```python
+np.cumsum(array)
+```
+
 <!-- 
 You can use the [editor on GitHub](https://github.com/64bitpandas/data8-cheat-sheet/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
