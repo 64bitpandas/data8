@@ -66,8 +66,21 @@ tbl = tbl.with_columns('first column', arr1, 'second column', arr2, ... ,'nth co
 
 **Getting specific rows or columns from a table**
 ```python
-# ROW
-first_row_only = tbl.
+# ROW: Pass in either an array/list of 0-indexed row numbers, OR a single number.
+first_row_only = tbl.take(0)
+every_third_row = tbl.take([0, 3, 6...])
+
+# COLUMN: Pass in either an array of column names, an array of column indices, OR individual names/indices.
+first_col_only = tbl.column(0)
+dank_memes_only = tbl.column(['Deep Fried Memes', 'Prequel Memes'])
+```
+
+**Sorting a Table**
+
+Used to easily find max/min of a table, or check if a table has duplicate entries.
+```python
+# Default: starts at the lowest value and repeats are allowed. With descending=True, starts at the highest value instead. With distinct=False, repeats are ignored.
+table.sort(column, descending=False, distinct=True)
 ```
 
 ## np aka "numpy"
