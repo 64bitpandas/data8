@@ -1,6 +1,6 @@
 ## Data 8 Cheat Sheet
 
-![link](https://www.inferentialthinking.com/favicon.png)
+![don't sue us pls](https://www.inferentialthinking.com/favicon.png)
 
 Lost in the sea of documentation? Don't know where to put `np` or `are` or really anything? You've come to the right place!!!
 
@@ -28,14 +28,16 @@ table1.join('Shared Column', table2)
 
 **Plotting a table's column as a line**
 ```python
-# plots the column as the x axis. Every column after it will be lines.
+# plots the column as the x axis. Every column after it will be represented as lines in the line graph.
 table.plot('column_name')
-```
-![plot example](./img/plot-multiple.png)
 
 #can also plot by x,y. Makes a single line
 table.plot('x_column','y_column')
 ```
+
+In the example below, `table.plot('AGE')` was called on a `table` with three columns: `AGE`, `2010`, and `2014`.
+![plot example](./img/plot-multiple.png)
+
 **Plotting a table's column as a scatter plot**
 
 
