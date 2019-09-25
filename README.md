@@ -38,7 +38,21 @@ table.plot('x_column','y_column')
 In the example below, `table.plot('AGE')` was called on a `table` with three columns: `AGE`, `2010`, and `2014`.
 ![plot example](./img/plot-multiple.png)
 
-**Plotting a table's column as a scatter plot**
+**Plotting a table's column as a histogram**
+
+**Percent per unit:** The percentage of the total data represented by 1 unit of the x-value. The area of a bar on the histogram is the percentage of total data represented inside that particular bin.
+
+```python
+# Creates a histogram of column values vs. percent per unit.
+tbl.hist('Column')
+
+# Optional bins value: can be either one number (specifying number of bins) or an array (specifying the bin start/stop values)
+tbl.hist('Column', bins=100) # 100 bins
+tbl.hist('Column', bins=np.arange(1, 10)) # 9 bins of equal width 1
+
+# Optional unit value: Instead of percent per unit, it's percent per second or percent per mile, etc.
+tbl.hist('Column', unit='second')
+```
 
 
 ## Table Operations
