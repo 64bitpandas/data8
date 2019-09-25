@@ -26,6 +26,12 @@ table1.join('Table1 Column', table2, 'Table2 Column')
 table1.join('Shared Column', table2)
 ```
 
+**Grouping a Table**
+```python
+# Makes a table with all possible combinations of values in the two columns, then applies func_to_apply to the remaining columns in the table.
+table.group(['Column 1', 'Column 2'], func_to_apply)
+```
+
 **Plotting a table's column as a line**
 ```python
 # plots the column as the x axis. Every column after it will be represented as lines in the line graph.
@@ -82,7 +88,7 @@ tbl = tbl.with_columns('first column', arr1, 'second column', arr2, ... ,'nth co
 ```python
 # ROW: Pass in either an array/list of 0-indexed row numbers, OR a single number.
 first_row_only = tbl.take(0)
-every_third_row = tbl.take([0, 3, 6...])
+every_third_row = tbl.take(np.arange(0, tbl.num_rows, 3))
 
 # COLUMN: Pass in either an array of column names, an array of column indices, OR individual names/indices.
 first_col_only = tbl.column(0)
