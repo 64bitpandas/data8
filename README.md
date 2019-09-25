@@ -15,6 +15,17 @@ Think of it as a happy medium between the [Python reference](http://data8.org/fa
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+**Joining two tables**
+
+If something in Table1 Column is not found in Table2 Column, that row is left out of the joined table!
+```python
+# Match rows in table1 using values in 'Table1 Column' with rows in table2 using values in 'Table2 Column'.
+table1.join('Table1 Column', table2, 'Table2 Column')
+
+# If Table1 Column and Table2 Column have the same name, the call instead is
+table1.join('Shared Column', table2)
+```
+
 **Plotting a table's column as a line**
 ```python
 # plots the column as the x axis. Every column after it will be lines.
