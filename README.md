@@ -15,9 +15,30 @@ Think of it as a happy medium between the [Python reference](http://data8.org/fa
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
-**Joining two tables**
+**Maps**
 
-If something in Table1 Column is not found in Table2 Column, that row is left out of the joined table!
+A table with 3 columns latitude, longitude, and name of location is required as a parameter.
+```python
+# Makes a map with pins
+Marker.map_table(table.select('lat', 'long', 'name'))
+# Makes a map with green circles of radius 10
+Circle.map_table(table.select('lat', 'long', 'name'), color='green', radius=10)
+# Makes a map with variable colors and sizes
+Circle.map_table(table.select('lat', 'long', 'name', 'color', 'size'))
+```
+
+**Pivot Tables**
+ - The top left cell in the table is reserved for the label for the leftmost column.
+```python
+# Puts the values in the first column to the column names in the pivot table, and the values in the second column to the row names in the pivot table.
+table.pivot('Column to columns', 'Column to rows', 'Values', func_to_apply)
+```
+
+**Joining two tables**
+ - If something in Table1 Column is not found in Table2 Column, that row is left out of the joined table!
+ - The leftmost column is always the `Shared Column`. If `Table2 Column` was specified then its name is `Table1 Column`.
+ - If there are multiple entries per value in the joined column, all possible combinations will be added to the joined table.
+ - The columns of `table1` appear to the left of all the columns of `table2`.
 ```python
 # Match rows in table1 using values in 'Table1 Column' with rows in table2 using values in 'Table2 Column'.
 table1.join('Table1 Column', table2, 'Table2 Column')
@@ -27,6 +48,8 @@ table1.join('Shared Column', table2)
 ```
 
 **Grouping a Table**
+ - The default `func_to_apply` is to count the number of rows for each category in `Column 1`.
+ - If `func_to_apply` is undefined on a specific column (e.g. trying to `sum` a bunch of strings) then the column will still exist, but will be empty.
 ```python
 # Makes a table with all possible combinations of values in the two columns, then applies func_to_apply to the remaining columns in the table.
 table.group(['Column 1', 'Column 2'], func_to_apply)
@@ -46,7 +69,7 @@ In the example below, `table.plot('AGE')` was called on a `table` with three col
 
 **Plotting a table's column as a histogram**
 
-**Percent per unit:** The percentage of the total data represented by 1 unit of the x-value. The area of a bar on the histogram is the percentage of total data represented inside that particular bin.
+ - **Percent per unit:** The percentage of the total data represented by 1 unit of the x-value. The area of a bar on the histogram is the percentage of total data represented inside that particular bin.
 
 ```python
 # Creates a histogram of column values vs. percent per unit.
