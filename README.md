@@ -179,6 +179,16 @@ np.append(array_1,value) # adds the value to the end of array_1
 np.append(array_1,array_2) # adds the values of array_2 to array_1
 ```
 
+**For Statements:**
+Used for various applications where you know how many times you want to do something.
+```python
+for var in array:
+    (something)
+# runs the (something) multiple times for every element of your array. Additionally assigns a temperary variable to var which is the value in that array for a certain iteration. Ex: the first time the (something) is executed, var is the first element of the array. 
+for pet in make_array('cat','rabbit', 'dragon')
+    print(pet)
+##In this case, every element of the array is printed.
+```
 
 
 <!-- 
