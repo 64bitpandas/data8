@@ -25,6 +25,7 @@ Stuff we just learned and is probably quite confuzzling at the moment.
     np.count_nonzero(pets) # Returns 3. same thing as sum, but works for non-boolean arrays.
  ```
     
+
 **Maps**
 
 A table with 3 columns: latitude, longitude, and name of location is required as a parameter.
@@ -162,6 +163,18 @@ np.diff(array)
 ```python
 np.cumsum(array)
 ```
+**Random Number:**
+For returning a random result from an array. Can specify to return multiple results equal to num_times. If multiple are specified, it returns an array.
+(Clarification: num_times is OPTIONAL. Default value: 1)
+```python
+np.random.choice(array,num_times=1) # Get an array of num_times random elements from array.
+
+sum(np.random.choice(array, num_times) == 'value in array') # Returns total number of times 'value in array' appeared inside the random selection
+```
+
+
+
+
 
 <!-- 
 You can use the [editor on GitHub](https://github.com/64bitpandas/data8-cheat-sheet/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
