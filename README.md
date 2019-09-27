@@ -164,15 +164,20 @@ np.diff(array)
 np.cumsum(array)
 ```
 **Random Number:**
-For returning a random result from an array. Can specify to return multiple results equal to num_times. If multiple are specified, it returns an array.
+For returning a random result from an array. Can specify to return multiple results equal to num_times. If multiple are specified, it returns an array. Selects with replacement.
 (Clarification: num_times is OPTIONAL. Default value: 1)
 ```python
 np.random.choice(array,num_times=1) # Get an array of num_times random elements from array.
 
 sum(np.random.choice(array, num_times) == 'value in array') # Returns total number of times 'value in array' appeared inside the random selection
 ```
-
-
+**Appending:**
+For adding to an existing array. Can either add a single value or another array. 
+ - Creates and returns a new array(Chaining it with other array opperations work!). If you want to save the new appended array, assign it to something!
+```python
+np.append(array_1,value) # adds the value to the end of array_1
+np.append(array_1,array_2) # adds the values of array_2 to array_1
+```
 
 
 
