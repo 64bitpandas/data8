@@ -55,6 +55,9 @@ table1.join('Shared Column', table2)
 table.group(['Column 1', 'Column 2'], func_to_apply)
 ```
 
+## Table Visualizations
+
+
 **Plotting a table's column as a line**
 ```python
 # plots the column as the x axis. Every column after it will be represented as lines in the line graph.
