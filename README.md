@@ -15,9 +15,19 @@ Think of it as a happy medium between the [Python reference](http://data8.org/fa
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+**Comparisons**
+
+ - Arrays: An array can have operations done on all the individual values of that array.
+ ```python
+    pets = make_array('cat', 'dog', 'fire breathing anteater')
+    pets == 'cat' # returns array [True, False, False]
+    sum(pets == 'cat') # returns 1 since True is equivalent to 1 and False is equivalent to 0
+    np.count_nonzero(pets) # Returns 3. same thing as sum, but works for non-boolean arrays.
+ ```
+    
 **Maps**
 
-A table with 3 columns latitude, longitude, and name of location is required as a parameter.
+A table with 3 columns: latitude, longitude, and name of location is required as a parameter.
 ```python
 # Makes a map with pins
 Marker.map_table(table.select('lat', 'long', 'name'))
