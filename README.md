@@ -175,8 +175,8 @@ sum(np.random.choice(array, num_times) == 'value in array') # Returns total numb
 For adding to an existing array. Can either add a single value or another array. 
  - Creates and returns a new array(Chaining it with other array opperations work!). If you want to save the new appended array, assign it to something!
 ```python
-np.append(array_1,value) # adds the value to the end of array_1
-np.append(array_1,array_2) # adds the values of array_2 to array_1
+array_1 = np.append(array_1,value) # adds the value to the end of array_1
+array_1 = np.append(array_1,array_2) # adds the values of array_2 to array_1
 ```
 
 **For Statements:**
