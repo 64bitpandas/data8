@@ -15,6 +15,29 @@ Think of it as a happy medium between the [Python reference](http://data8.org/fa
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+**Sampling and Distributions**
+
+ - Random Sampling
+```python
+# Takes n random rows WITH REPLACEMENT from `tbl`, then grabs the array of values in `Column Name`.
+tbl.sample(n).column('Column Name')
+
+# NO replacement
+tbl.sample(n, with_replacement=False)
+```
+ - Categorical Sampling
+ ```python
+ # Out of a random sample of size sample_size, the proportion of times each value in probability_distribution was picked
+ sample_proportions(sample_size, probability_distribution)
+ # Probability_distribution is an array that has probability values.
+ # Returns an array of simulated proportions.
+
+ # Example:
+ probability_distribution = make_array(.26, .74)
+ sample_proportions(100, probability_distribution)
+ # Output should be around [.26, .74] but with some variability
+```
+
 **Comparisons**
 
  - Arrays: An array can have operations done on all the individual values of that array.
