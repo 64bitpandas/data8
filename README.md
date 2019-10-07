@@ -38,6 +38,7 @@ tbl.sample(n, with_replacement=False)
  # Output should be around [.26, .74] but with some variability
 ```
 
+
 **Comparisons**
 
  - Arrays: An array can have operations done on all the individual values of that array.
