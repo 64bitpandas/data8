@@ -59,11 +59,22 @@ The stats part of data science
       -Example: The people were not a random sample.
 
 ## Hypotheses and Testing
-   - **Null Hypothesis:** A well defined chance model about how the data was generated. We can simulate data under the null hypothesis.
+   - **Null Hypothesis:** A well defined chance model about how the data was generated. We can simulate data *under the null hypothesis*.
       - Simulate under the null hypothesis will give and emperical distribution of the statistic under the null hypothesis. If the observed data is not consistent with the distribution, then the alternative is favored.
       - Use a visualization to verify consistency.
-   - **Alternative Hypothesis:** The hypothesis stating that the null hypothesis is false.
+   - **Alternative Hypothesis:** The hypothesis stating that the null hypothesis is false, or an alternative view about the origin of the data.
+      - Can be more vague than the null hypothesis.
    - **Test Statistic:** What the simulation is trying to predict/observe about the distributions
    - **Questions** What values of the test statistic will make us lean towards the null? Alternative?
-      - Prefer 1-sided ('only high values matter')
-      
+      - Prefer to choose "just high" and "just low" rather than "high or low values" of the statistic to lean towards the null/alternative.
+   - **Hypothesis Testing:** Determines which hypothesis is better supported by the data. 
+      - You must have one hypothesis that is simulatable by data
+   - **Empirical Distribution Under the Null:** The distribution seen when simulating the test statistic under the assumptions of the null hypothesis. Can be done for any statistic.     
+      - Shows likely values of the statistic and their probabilities of occurring (**approximate** because we can't generate all possible random samples)
+   - **Conclusion** resolves the choice between null and alternative hypothesis
+      - **Reject the null hypothesis** if the observed value(s) are inconsistent with the distribution of the null. Also can say "Is not consistent with the Null"
+   - **Tails:** If the test statistic is in the tail of the empirical distribution and the area of the tail is less than 5%, then the result was statistically significant.
+      - If it is less than 1%, then the result was HIGHLY statistically significant.
+   - **P-Value (Observed Significance Level):** The chance under the null hypothesis that the test statistic is equal to or more extreme than the alternative
+      - Calculate as `np.sum(simulated values [<= or >=] observed value)/total simulated values`
+   

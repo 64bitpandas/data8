@@ -86,7 +86,7 @@ table1.join('Shared Column', table2)
  - The default `func_to_apply` is to count the number of rows for each category in `Column 1`.
  - If `func_to_apply` is undefined on a specific column (e.g. trying to `sum` a bunch of strings) then the column will still exist, but will be empty.
 ```python
-# Makes a table with all possible combinations of values in the two columns, then applies func_to_apply to the remaining columns in the table.
+# Makes a table with all possible combinations of values in the two columns, then applies func_to_apply to the REMAINING columns in the table.
 table.group(['Column 1', 'Column 2'], func_to_apply)
 ```
 
