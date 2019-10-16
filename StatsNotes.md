@@ -44,6 +44,7 @@ The stats part of data science
    - TVD is only used to compare two *categorical* distributions.
    - Compare the *calculated TVD* (using the formula above) with the *simulated TVD* (creating a distribution by randomly selecting a distribution according to the model using `sample_proportions()`)
 
+
 ## Models
    - **Definition:** A set of assumptions about the data. 
       - Most involve assumptions about randomness
@@ -75,6 +76,20 @@ The stats part of data science
       - **Reject the null hypothesis** if the observed value(s) are inconsistent with the distribution of the null. Also can say "Is not consistent with the Null"
    - **Tails:** If the test statistic is in the tail of the empirical distribution and the area of the tail is less than 5%, then the result was statistically significant.
       - If it is less than 1%, then the result was HIGHLY statistically significant.
-   - **P-Value (Observed Significance Level):** The chance under the null hypothesis that the test statistic is equal to or more extreme than the alternative
+   - **P-Value (Observed Significance Level):** The chance under the null hypothesis that the test statistic is equal to the observed value or takes on values favoring the alternative
       - Calculate as `np.sum(simulated values [<= or >=] observed value)/total simulated values`
+      -Small values of p support the alternative
+         - The statistic is *not* the p-value. For some statistics, large statistic = small p-value (e.g. absolute value distance from 50% in coin flips if null is a fair coin).
+         - Other statistics are the opposite- small statistic = small p-value (e.g. number of black men in panel when null is that there should be 20 black men)
+      - Equal to the area under the curve **at or to the left/right/both of the observed value**
+         - The alternative determines whether smaller or larger values of the statistic are included in the p-value calculations.
+   - **Errors in Testing**
+      - Test favors null, but the alternative is actually true!
+         - Probability is equal to the cutoff value
+      - Test favors alternative, but the null is actually true!
+   - **P-value Cutoff**
+      - Does not depend on observed data or simulation
+      - Decided before simulation is run
+      - Convention: 5% or 1%
+         - Origin: 
    
