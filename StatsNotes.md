@@ -66,6 +66,9 @@ The stats part of data science
    - **Alternative Hypothesis:** The hypothesis stating that the null hypothesis is false, or an alternative view about the origin of the data.
       - Can be more vague than the null hypothesis.
    - **Test Statistic:** What the simulation is trying to predict/observe about the distributions
+      - For a scenario:(Null: coin is fair)(Alternative:...):
+      - if the alternative is "coin is biased towards heads or tails", then only recording the number of heads or tails in a sample is sufficient as a statistic.
+      - if the alternative is "coin is not fair", then recording the (simulated heads or tails - expected number of heads or tails) is the best statistic.
    - **Questions** What values of the test statistic will make us lean towards the null? Alternative?
       - Prefer to choose "just high" and "just low" rather than "high or low values" of the statistic to lean towards the null/alternative.
    - **Hypothesis Testing:** Determines which hypothesis is better supported by the data. 
@@ -92,4 +95,8 @@ The stats part of data science
       - Decided before simulation is run
       - Convention: 5% or 1%
          - Origin: 
-   
+   **Benford's Law:** P(first digit = d)= log(1+1/d)
+      - Plotting the first numbers of the data should follow Benford's law. 
+      - Useful for detecting fraud.
+
+      
