@@ -153,7 +153,7 @@ every_third_row = tbl.take(np.arange(0, tbl.num_rows, 3))
 
 # COLUMN: Pass in either an array of column names, an array of column indices, OR individual names/indices.
 first_col_only = tbl.column(0)
-dank_memes_only = tbl.column(['Deep Fried Memes', 'Prequel Memes'])
+dank_memes_only = tbl.column('Deep Fried Memes')
 ```
 
 **Sorting a Table**
