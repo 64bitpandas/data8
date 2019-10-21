@@ -98,5 +98,31 @@ The stats part of data science
    **Benford's Law:** P(first digit = d)= log(1+1/d)
       - Plotting the first numbers of the data should follow Benford's law. 
       - Useful for detecting fraud.
-
-      
+   **A/B Testing:** Testing to see if the difference in two groups is due to chance or not.
+      - NULL: The DISTRIBUTIONS  are the SAME
+      - Alternative: example(In the population, the Group B, on average, has a lower/higher (x) than the Group A)
+      - Statistic: (Group B(average) - Group A(average))
+      - Simulate: Make a function to take a statistic across any table
+         - Ex: 
+         ```python
+         def select(table,label,group_label):
+            reduced = table.select(label,group_label)
+            means = reduced.group_by(group_label,np.average)
+            return means.column(label average).take(1) - means.column(label average).take(0)
+         ```
+   **Permutation Test**
+   - Shuffle around the labels and see if the average weights are the same as the original data. If they are similar, that means the labels have no association with the weights. Use `table.sample(n)`
+      - Pick **without replacement** (`with_replacement=False`) because we don't want the same data point to be assigned to  different labels randomly
+      - Use `table.sample(with_replacement=False)` with NO numerical input to get the same number of rows out as number of rows in the original table
+      - Make new array as a shuffled column of the original labels shuffled by the table.sample() function and then add to the original.
+         ```python
+         def one_simulation(table,label,group_label)
+            shuffled_labels = table.sample(with_replacement=False).column(label)
+            original_and_shuffled = table.with_column('shuffled',shuffled_labels)
+            return statistic(original_and_shuffled,label,'shuffled')     
+         ```
+         - Compare the distribution of this simulation to the observed difference (statistic) to find the p-value.
+         - p = `np.count_nonzero(differences <less/greater than, etc> observed_difference) / len(differences)`
+         
+               
+   
