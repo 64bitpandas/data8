@@ -72,6 +72,14 @@ The stats part of data science
    - **Questions** What values of the test statistic will make us lean towards the null? Alternative?
       - Prefer to choose "just high" and "just low" rather than "high or low values" of the statistic to lean towards the null/alternative.
    - **Hypothesis Testing:** Determines which hypothesis is better supported by the data. 
+
+      <!-- GO INTO PREVIEW MODE TO VIEW PROPERLY -->
+      | Type of Data | Test Statistic | How to Simulate | Example |
+      |--------------|----------------|-----------------|---------|
+      | 1 Sample, 1 Category  |  empirical percentage  |  sample_proportions(n,null_dist) | Percentage of purple flowers  |
+      |  1 Sample, Multiple Categories  | TVD(empircal_dist,null_dist)  | sample_proportions(n,null_dist)  |  Ethnicity distribution of jury panel |
+      |  1 Sample, Numerical Data |  empirical mean | data.sample(n,with_replacement = False)  | Scores in section |
+      | 2 Samples, Numarical Data  | difference in means  | empirical_data.sample(with_replacement = False)  |  Birth weight of smokers vs non smokers |
       - You must have one hypothesis that is simulatable by data
    - **Empirical Distribution Under the Null:** The distribution seen when simulating the test statistic under the assumptions of the null hypothesis. Can be done for any statistic.     
       - Shows likely values of the statistic and their probabilities of occurring (**approximate** because we can't generate all possible random samples)
@@ -123,6 +131,16 @@ The stats part of data science
          ```
          - Compare the distribution of this simulation to the observed difference (statistic) to find the p-value.
          - p = `np.count_nonzero(differences <less/greater than, etc> observed_difference) / len(differences)`
-         
-               
+
+**Randomized Controlled Experiment**: 
+   - Sample A: Control
+   - Sample B: Treatment
+      - If the treatment and control groups seem random, then you can make causual connections
+      - Any difference in outcomes could be due to chance or the treatment.
+      - For each person, they have two potential outcomes in a study.
+         - The outcome if assigned  *treatment* and the outcome if assigned to *control* 
+      - **Null:** The distribution of the *control* group's scores and the *treatment* group's scores are the same.
+       (Treatment has no effect)
+      - **Alternative:** The treatment scores are different/better/worse than the control
+         - EX: compute the statistic(difference in scores(means) between the two groups) for randomizations of groups.
    

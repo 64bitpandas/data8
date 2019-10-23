@@ -2,15 +2,13 @@
 
 ![don't sue us pls](https://www.inferentialthinking.com/favicon.png)
 
-Lost in the sea of documentation? Don't know where to put `np` or `are` or really anything? You've come to the right place!!!
-
-This is a really condensed version of the docs that will keep updating throughout the semester to highlight the most crucial functions at any given time. 
-
-Think of it as a happy medium between the [Python reference](http://data8.org/fa19/python-reference.html) and the [textbook](https://www.inferentialthinking.com/chapters/intro). At some point you'll probably want more info than the Python reference gives, but not quite at the level of the word-bombardment of the detailed textbook entries. 
+This is a really condensed version of the docs that will keep updating throughout the semester to highlight the most crucial functions at any given time. It's a happy medium between the [Python reference](http://data8.org/fa19/python-reference.html) and the [textbook](https://www.inferentialthinking.com/chapters/intro).
 
 #### PSA: Something missing/unclear? Contribute to the cheat sheet!!! [Edit the text directly](https://github.com/64bitpandas/data8-cheat-sheet/edit/master/README.md) or [Create an issue](https://github.com/64bitpandas/data8-cheat-sheet/issues)!
 
-#### Also, this is very WIP right now. Check back in about a week or so and it'll be much more complete.
+## Stats Notes
+
+### [CLICK HERE!](./StatsNotes)
 
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
