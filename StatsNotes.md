@@ -106,9 +106,10 @@ The stats part of data science
    **Benford's Law:** P(first digit = d)= log(1+1/d)
       - Plotting the first numbers of the data should follow Benford's law. 
       - Useful for detecting fraud.
-   **A/B Testing:** Testing to see if the difference in two groups is due to chance or not.
+   **A/B Testing:** 
+       - **Definition:** A specific type of hypothesis test where the null hypothesis is that two samples were drawn from the same distribution.
       - NULL: The DISTRIBUTIONS  are the SAME
-      - Alternative: example(In the population, the Group B, on average, has a lower/higher (x) than the Group A)
+      - Alternative: example(In the population, the Group B, on average, has a lower/higher (x) than the Group A). i.e. The two distributions come from different populations.
       - Statistic: (Group B(average) - Group A(average))
       - Simulate: Make a function to take a statistic across any table
          - Ex: 
@@ -133,6 +134,7 @@ The stats part of data science
          - p = `np.count_nonzero(differences <less/greater than, etc> observed_difference) / len(differences)`
 
 **Randomized Controlled Experiment**: 
+   - Test by performing a **permutation** 
    - Sample A: Control
    - Sample B: Treatment
       - If the treatment and control groups seem random, then you can make causual connections
