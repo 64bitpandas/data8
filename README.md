@@ -13,6 +13,17 @@ This is a really condensed version of the docs that will keep updating throughou
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+**Percentile:** The value is the at least as large as the X% of elements. Always round up. Whether it is sorted does not matter.
+ - Example:
+ ```python
+  percentile(x , s) ##x is a number and s is an array
+  ## returns item of the array that is at the specified percentile
+  s = [9,3,5,7,1]
+  percentile(80 , s)
+  ##returns 7, (4th largest element)
+  ##80th percentile is (80/100 * 5  = 4) so it is the 4th element
+  ##75th percentile is also 7 because of rounding
+  ```
 **Sampling and Distributions**
 
  - Random Sampling
