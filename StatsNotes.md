@@ -112,7 +112,15 @@ The stats part of data science
     
    - **How to Simulate**
    ```python
+      proportions = make_array(probability_true, probability_false)
+
+      def one_statistic():
+         return some_statistic_function(sample_proportions(num_in_sample, proportions).item(0))
       
+      simulated_stats = make_array()
+
+      for i in np.arange(num_simulations):
+         simulated_stats = simulated_stats.append(simulated_stats, one_statistic())
    ```
    
 
