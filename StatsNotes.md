@@ -179,11 +179,45 @@ The stats part of data science
 |Observational Sample| Numerical Data with 2 Samples  |Shuffle labels to simulate from null   |Association   |   |
 |Random Control Experiment   | Numerical Data with 2 Samples   |Shuffle labels to simulate from null   | Causation   |   |
 
+
+## Quantifying Uncertainty
+
 **Estimation:** If we want to get a value of a parameter for a population, a census is usually unrealistic. Therefore, estimation is a useful tool.
    - Use the table.sample(n,with_replacement=False) function to create a sample.
    - (estimate)= (true value) + (Error)
 
-**Bootstrap:** A technique for simulating repeated random sampling
+**Bootstrap:** A technique/process for simulating repeated random sampling
    - All we have is a large random sample
-   - Then we resample from the sample (with replacement!)
-   
+   - Then we resample from the sample (**with** replacement - allows variation in the resample rather than just being the same sample again!)
+   - Used for getting many samples from only one sample of a population. Important because we almost never get census data
+   - Very similar to population/real-world sampling if the sample is large enough
+   - Resamples should be the **same size** as the original sample in order to properly evaluate variability and error
+
+**Confidence Intervals:** An x% confidence interval means that we are x% confident that the true value lies within a certain range, given estimates of a parameter
+ - Confidence level: x% (0 <= x <= 100)
+ - Higher confidence level = **wider** interval
+
+ - **Generating confidence interval from bootstrap**
+   1. Take a sample
+   2. Use sample to make many bootstrap samples
+   3. Construct a confidence interval based on the distribution of test statistics in the bootstrap samples
+ ```python
+ def construct_confidence_interval(confidence_level, population, n)
+   """Given a confidence level, table with population data, and a number of samples to take, constructs a confidence interval based on bootstrap samples.
+   """
+   # ONLY if we are simulating and know the entire census data!!!
+   our_sample = population.sample(n, with_replacement = False)
+   # Get the median as a test statistic
+   our_sample_median = percentile(50, our_sample.column('Data')) 
+   # Create list of bootstrap sample statistics
+   bootstrap_medians = np.array([one_bootstrap_median() for _ in np.arange(n)])
+
+   # Example: If the confidence level was 95, the lower percentile would be 2.5 and the upper percentile would be 97.5
+   left = percentile((100 - confidence_level)/2, bootstrap_medians) 
+   right = percentile(100 - (100 - confidence_level)/2, bootstrap_medians)
+
+   return [left, right]
+```
+
+
+
