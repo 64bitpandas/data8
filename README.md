@@ -13,6 +13,9 @@ This is a really condensed version of the docs that will keep updating throughou
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+`np.full(length, value)` creates an array of length `length` filled with `value`
+    - Example: `np.full(4, 2)` returns `[2, 2, 2, 2]`
+    
 **Percentile:** The value is the at least as large as the X% of elements. Always round up. Whether it is sorted does not matter.
  - Example:
  ```python

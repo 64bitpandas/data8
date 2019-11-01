@@ -192,6 +192,11 @@ The stats part of data science
    - Used for getting many samples from only one sample of a population. Important because we almost never get census data
    - Very similar to population/real-world sampling if the sample is large enough
    - Resamples should be the **same size** as the original sample in order to properly evaluate variability and error
+   - Bootstrap should not be used to:
+      - estimate very high or low percentiles(max or min height)
+      - estimate a parameter that is affected by rare elements
+      - estimate for probability distributions that are not roughly normal
+      - estimate from a very small original sample
 
 **Confidence Intervals:** An x% confidence interval means that we are x% confident that the true value lies within a certain range, given estimates of a parameter
  - Confidence level: x% (0 <= x <= 100)
@@ -218,6 +223,25 @@ The stats part of data science
 
    return [left, right]
 ```
+- CI for testing:
+   - Null: Population average = x
+   - Alternative: Population average != x
+   - Cutoff P = p%
+   - Method:
+      - Construct a 100-p% confidence interval for the population average
+      - if x is not in the interval, reject null
+      - if x is in the interval, can't reject the null
 
-
+**Definitions of center and Spread:**
+- Mean: The weighted average of the data
+   - Value depends on the distribution of the data, not the multiplicity of the distribution.
+      - As long as the relative proportions and values of each data point is the same, multiplying everything by a number doesn't change the mean.
+   - Not necessarily a value in the data
+   - Somewhere between min and max
+   - Same units as the data
+   - "Center of mass"
+- Median: Half-way point of the data
+   - Value depends only on the the largest (or smallest) half of the data.
+- Standard Deviation: Spread of the data around mean
+   - 
 
