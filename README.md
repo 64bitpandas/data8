@@ -13,6 +13,27 @@ This is a really condensed version of the docs that will keep updating throughou
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+**Standardized Units (aka Z score):**
+```def standard_units(x):
+    return (x - np.mean(x))/np.std(x)
+```
+    -Converts values in an array to their standard unit values and returns an array
+    -Example: `standard_units(make_array(1, 2, 3, 4, 5))` returns `array([-1.41421356, -0.70710678,  0. , 0.70710678, 1.41421356])`
+
+**Standard Deviation:** 
+
+`np.std(array)` calculates the standard deviation of a given array.
+    - Example: `np.std(make_array(1, 2, 3, 4, 5)) returns 2
+        - Explanation: mean is 3
+        - Differences are [-2, -1, 0, 1, 2]
+        - Square of differences are [4, 1, 0, 1, 4]
+        - Sum of square of differences is 10
+        - 10 / (num points 1) = 10 / (5) = 2
+        - sqrt(2) = 1.41421357...
+    - If you want **sample standard deviation** use `np.std(array, ddof = 1)`
+
+**Creating prefilled arrays:** 
+
 `np.full(length, value)` creates an array of length `length` filled with `value`
     - Example: `np.full(4, 2)` returns `[2, 2, 2, 2]`
     

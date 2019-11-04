@@ -232,8 +232,8 @@ The stats part of data science
       - if x is not in the interval, reject null
       - if x is in the interval, can't reject the null
 
-**Definitions of center and Spread:**
-- Mean: The weighted average of the data
+**Definitions of Center and Spread:**
+- Mean: The weighted average of the data (Sum of point values/number of points)
    - Value depends on the distribution of the data, not the multiplicity of the distribution.
       - As long as the relative proportions and values of each data point is the same, multiplying everything by a number doesn't change the mean.
    - Not necessarily a value in the data
@@ -242,6 +242,13 @@ The stats part of data science
    - "Center of mass"
 - Median: Half-way point of the data
    - Value depends only on the the largest (or smallest) half of the data.
-- Standard Deviation: Spread of the data around mean
-   - 
-
+- Standard Deviation: Spread of the data around mean (sqrt( sum((value - mean)^2)/number of points - 1)
+   - "root mean square of deviations from the average"
+- Chebyshev's Inequality: for a constant z, (1 - 1/z^2)% of your data will be within (mean + or - z*standard deviation)
+   - At least 96% of z-values will be between -5 and 5
+- Z-scores aka standard units: a standard measure of how far from the average a value is 
+   - (value - average) / standard deviation
+   - z == 0:value equal to the mean
+   - z > 0: value is above the mean
+   - z < 0: value is below the mean
+- When values are in standard units, the average is 0 and the SD is 1
