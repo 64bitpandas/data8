@@ -245,10 +245,25 @@ The stats part of data science
 - Standard Deviation: Spread of the data around mean (sqrt( sum((value - mean)^2)/number of points - 1)
    - "root mean square of deviations from the average"
 - Chebyshev's Inequality: for a constant z, (1 - 1/z^2)% of your data will be within (mean + or - z*standard deviation)
-   - At least 96% of z-values will be between -5 and 5
+   - At least (1 - 1/5^2) = 96% of z-values will be between -5 and 5 standard deviations
+   - NOT- inclusive of endpoints
 - Z-scores aka standard units: a standard measure of how far from the average a value is 
    - (value - average) / standard deviation
    - z == 0:value equal to the mean
    - z > 0: value is above the mean
    - z < 0: value is below the mean
 - When values are in standard units, the average is 0 and the SD is 1
+
+**Normal Distributions:** Bell shaped distribution.
+   - 68 / 95 / 99.7% of the data is within 1 / 2 / 3 standard deviations from the mean.
+
+*Central limit theorem:* 
+   - Theorem which describes how the normal is connected to sample averages.
+   - If a sample is large and drawn at random with replacement, then the probability distribution of the sample averages is roughly normal
+   - The larger the sample size, the closer to normal a distribution will become
+   - Reasoning: From one sample, you have one average, but there is always a possibility that the sample average you got was different than another sample's average.
+      - Imagine all possible random samples of the same size. 
+      - Each has their own average.
+      - The distribution of the sample average is the distribution of all possible samples.
+      - For a population of N, the number of possible samples of sample size, n, are N^n
+          - We don't need this many iterations- even a small fraction (10000) is enough to approximate the curve
