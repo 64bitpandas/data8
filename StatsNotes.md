@@ -267,3 +267,13 @@ The stats part of data science
       - The distribution of the sample average is the distribution of all possible samples.
       - For a population of N, the number of possible samples of sample size, n, are N^n
           - We don't need this many iterations- even a small fraction (10000) is enough to approximate the curve
+   - Relation to Confidence Interval: 95% of all sample averages are within 2 standard deviations of the mean due to normality.
+      - By association, the mean is within 2 standard deviations of 95% of points.
+      
+**Sample Proportions**
+   - Proportions are **averages**
+   - Simplified example: If a population is comprised of all true/false answers, then the proportion of Trues is the population average.
+   - Sample SD = sqrt(p*(1-p))/n
+   - If we want p% precision / margin of error
+      - `Sample Size >= 4*SD/(p*.01)`
+      - worst case: SD of the proportions = 0.5 for a proportion p = 0.5
