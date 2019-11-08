@@ -257,9 +257,12 @@ The stats part of data science
 **Normal Distributions:** Bell shaped distribution.
    - 68 / 95 / 99.7% of the data is within 1 / 2 / 3 standard deviations from the mean.
 
-*Central limit theorem:* 
-   - Theorem which describes how the normal is connected to sample averages.
-   - If a sample is large and drawn at random with replacement, then the probability distribution of the sample averages is roughly normal
+**Central limit theorem:**
+   - Theorem which describes how the normal distribution is connected to sample averages.
+   - **Conditions:**
+      - Probability distribution of the sum or average of a sample
+      - Sample must be large
+      - Samples must be drawn with replacement
    - The larger the sample size, the closer to normal a distribution will become
    - Reasoning: From one sample, you have one average, but there is always a possibility that the sample average you got was different than another sample's average.
       - Imagine all possible random samples of the same size. 
@@ -277,3 +280,8 @@ The stats part of data science
    - If we want p% precision / margin of error
       - `Sample Size >= 4*SD/(p*.01)`
       - worst case: SD of the proportions = 0.5 for a proportion p = 0.5
+
+ **Sample SD and mean**
+  As a sample size approaches the population size:
+   - The sample mean approaches the population mean
+   - The sample SD approaches the value `Population SD / n` where n is the sample size
