@@ -13,6 +13,15 @@ This is a really condensed version of the docs that will keep updating throughou
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+**Rows:**
+```
+#t.rows is an attribute that returns all the rows of a table
+
+for row in t.rows:
+    #do anything to the row
+```
+
+
 **Standardized Units (aka Z score):**
 ```def standard_units(x):
     return (x - np.mean(x))/np.std(x)

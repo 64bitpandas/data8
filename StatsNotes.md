@@ -281,7 +281,19 @@ The stats part of data science
       - `Sample Size >= 4*SD/(p*.01)`
       - worst case: SD of the proportions = 0.5 for a proportion p = 0.5
 
- **Sample SD and mean**
+**Sample SD and mean**
   As a sample size approaches the population size:
    - The sample mean approaches the population mean
    - The sample SD approaches the value `Population SD / n` where n is the sample size
+
+**Classification and Regression:**
+   - Classification is for **categorical** data; regression is for **numerical** data
+   - Classifiers: Takes attributes of an example and outputs a prediction for the label.
+   - *Evaluating the quality of a classifier:* Judge on precision and recall
+      - Precision: The proportion of your predictions that are correct.(true positives/all positives)
+      - Recall/True Positive Rate: Measures how many of the positive values were actually predicted correctly. (true positives/(predicted positives + false negatives))
+      - Split sample into training set and test set and evaluate the accuracy of the prediction on the test set.
+   - **Nearest Neighbor:** Used for classification. Basic idea: find the label of the entry in the training set that is most similar to the entry in question.
+      - Ideal only for data where the distinction between the labeled data is clear.  
+   - **Decision Boundary:** The line on which the prediction will change if a point is on one side vs the other
+   
