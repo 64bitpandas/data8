@@ -15,8 +15,16 @@ Stuff we just learned and is probably quite confuzzling at the moment.
 
 **Rows:**
 ```
-#t.rows is an attribute that returns all the rows of a table
+#to do k nearest neighbor, iterating over rows after removing the class is most efficient in this way.
+# row_distance is a function that takes two row objects and computes their difference.
+attributes_only = table.drop('Class')
+for row in attributes_only.rows:
+    distances = np.append(distances, row_distance(row, example))
 
+#to read a row as an array, use np.array(t.row(i))
+rows = np.array(t.row(i))
+
+#t.rows is an attribute that returns all the rows of a table. rows are row objects
 for row in t.rows:
     #do anything to the row
 ```

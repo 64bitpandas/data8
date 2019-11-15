@@ -296,4 +296,6 @@ The stats part of data science
    - **Nearest Neighbor:** Used for classification. Basic idea: find the label of the entry in the training set that is most similar to the entry in question.
       - Ideal only for data where the distinction between the labeled data is clear.  
    - **Decision Boundary:** The line on which the prediction will change if a point is on one side vs the other
-   
+   - **k Nearest Neighbors:** Used for classification that is robust against the instance where there are 2 neighbors that are close in their features, but different in class.
+      - to classify a point: find its k(odd number) nearest neighbors.
+      - assign class to the point according to the class value with the greatest frequency among the k nearest neighbors.
