@@ -13,6 +13,20 @@ This is a really condensed version of the docs that will keep updating throughou
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+**Correlation Coefficient:**
+```python
+# with a table of points values for the two variables x/y in standard units
+t = t.with_columns('x_st', x_st, 'y_st', y_st)
+
+#create a column of products
+products = x_st * y_st
+t = t.with_column('products', products)
+
+#take mean of the products to get the correlation coefficient
+r = np.mean(products)
+
+```
+
 **Rows:**
 ```
 #to do k nearest neighbor, iterating over rows after removing the class is most efficient in this way.

@@ -299,3 +299,10 @@ The stats part of data science
    - **k Nearest Neighbors:** Used for classification that is robust against the instance where there are 2 neighbors that are close in their features, but different in class.
       - to classify a point: find its k(odd number) nearest neighbors.
       - assign class to the point according to the class value with the greatest frequency among the k nearest neighbors.
+   - **Measuring Association:** Quantifying the relationship between two variables with a number.
+       - Convert to standard units using `(value - mean(value)) / SD`
+       - Correlation Coefficient: number representing the direction and magnitude of the relationship. Represented by the letter 'r'. For standard units... 
+         - Possitive: when x is positive, y is positive (in standard units)
+         - Negative: when x is negative, y is negative (in standard units)
+         - key: r = 1 means very positive, r = -1 means very negative, r = 0 means no relationship.
+
