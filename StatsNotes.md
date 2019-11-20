@@ -301,8 +301,12 @@ The stats part of data science
       - assign class to the point according to the class value with the greatest frequency among the k nearest neighbors.
    - **Measuring Association:** Quantifying the relationship between two variables with a number.
        - Convert to standard units using `(value - mean(value)) / SD`
-       - Correlation Coefficient: number representing the direction and magnitude of the relationship. Represented by the letter 'r'. For standard units... 
-         - Possitive: when x is positive, y is positive (in standard units)
+       - Correlation Coefficient: number representing the *linear* association's direction and magnitude of the relationship. Represented by the letter 'r'. For standard units... 
+         - Not really useful for anything other than linear relationships (make sure before computing)
+         - Average of the product of x in standard units and y in standard units (see other page for code reference)
+         - Positive: when x is positive, y is positive (in standard units)
          - Negative: when x is negative, y is negative (in standard units)
          - key: r = 1 means very positive, r = -1 means very negative, r = 0 means no relationship.
+         
+   
 
