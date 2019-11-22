@@ -13,6 +13,44 @@ This is a really condensed version of the docs that will keep updating throughou
 ## Hot Functions
 Stuff we just learned and is probably quite confuzzling at the moment.
 
+**Minimize:** `minimize(f)` takes in a function with any number of arguments and returns the inputs that result in a minimum value outputted from f.
+
+**Linear Regression:**
+```python
+def standard_units(arr):
+    """Converts an array of data points into standard units"""
+    return (arr - np.mean(arr)) / np.std(arr)
+
+def correlation(t, x, y):
+    """Computes the correlation coefficient r given data for x and y in table t"""
+    t_x = t.column(x)
+    t_y = t.column(y)
+    return np.mean(standard_units(x) * standard_units(y))
+
+def slope(t, x, y):
+    """Uses the formula r * (Sy / Sx) to calculate the slope of the regression line"""
+    r = correlation(t, x, y)
+    x_sd = np.std(t.column(x))
+    y_sd = np.std(t.column(y))
+    return r * y_sd / x_sd
+
+def intercept(t, x, y):
+    """Returns the intercept of the line using the formula y = mx + b, substituting ymean = m(xmean) + b as a point on the line"""
+    return np.mean(t.column(y)) - slope(t, x, y)*np.mean(t.column(x))
+
+def fitted_data(t, x, y):
+    """Returns a table with a new column: the predictions of y for every value in the x column in that table."""
+    predictions = slope(t, x, y) * t.column(x) + intercept(t, x, y)
+    return t.with_column('Prediction', predictions)
+
+def root_mean_square_error(t, y, predict):
+    """Given a table with y and predictions, returns the RMS using the formula sqrt(mean((y - prediction)**2))"""
+    return (np.mean((t.column(y) - t.column(predict))**2)) ** 0.5
+
+def minimize_rmse(t):
+    return minimize(lambda slope, intercept: root_mean_square_error(slope * t.column(x) + intercept, y, 'Prediction'))
+```
+
 **Correlation Coefficient:**
 ```python
 # with a table of points values for the two variables x/y in standard units
