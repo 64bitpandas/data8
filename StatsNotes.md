@@ -307,6 +307,12 @@ The stats part of data science
          - Positive: when x is positive, y is positive (in standard units)
          - Negative: when x is negative, y is negative (in standard units)
          - key: r = 1 means very positive, r = -1 means very negative, r = 0 means no relationship.
-         
-   
+         - r = (standard devation of predictions)/(standard devation of actual values)
+   - **Residuals:** Measures of error of an x_value relative to a prediction. Positive residuals represent underestimates, and negative residuals represent overestimates. res = (y_actual - y_pred)
+      - Have a mean of zero 
+      - Should have zero correlation with x and the y.
+      - Should look like a formless blob when plotting residual vs. x_values
+      - If we get a mean residual of *K* where k > 0, shift up the line by k to counteract the underestimation
+      - RMSE = standard devaition of residuals
+      - 
 
