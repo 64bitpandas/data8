@@ -244,7 +244,7 @@ The stats part of data science
    - Value depends only on the the largest (or smallest) half of the data.
 - Standard Deviation: Spread of the data around mean (sqrt( sum((value - mean)^2)/number of points - 1)
    - "root mean square of deviations from the average"
-- Chebyshev's Inequality: for a constant z, (1 - 1/z^2)% of your data will be within (mean + or - z*standard deviation)
+- **Chebyshev's Inequality:** for a constant z, (1 - 1/z^2)% of your data will be within (mean + or - z*standard deviation)
    - At least (1 - 1/5^2) = 96% of z-values will be between -5 and 5 standard deviations
    - NOT- inclusive of endpoints
 - Z-scores aka standard units: a standard measure of how far from the average a value is 
@@ -314,5 +314,21 @@ The stats part of data science
       - Should look like a formless blob when plotting residual vs. x_values
       - If we get a mean residual of *K* where k > 0, shift up the line by k to counteract the underestimation
       - RMSE = standard devaition of residuals
-      - 
+   
+   - **Variance Decomposition**
+      - Definition: y = fitted values + residuals
+      - Variance(y) = Variance(fitted values) + Variance(residuals)
+         - **Caution:** SD(y) != SD(fitted values) + SD(residuals)
+      - r = SD(fitted values)/SD(y)
+      - Var(fitted values) = r^2 * Var(y)
+      - Var(residuals) = Var(y) - Var(fitted values) = Var(y) * (1 - r^2)
+         - SD(residuals) = sqrt(1 - r^2) * SD(y)
 
+   - **Estimating the True Line**
+      - Given a scatterplot of a sample, we want to estimate what the regression line is for the population.
+      - Steps to get a confidence interval for a prediction:
+         1. Bootstrap the scatterplot
+         2. Get the regression line prediction for the point in that bootstrap sample
+         3. Repeat n times
+         4. Get a confidence interval based on the prediction data (typically middle 95%). Also helpful to draw a histogram
+      - To get estimates for a true slope, do the same steps, but get the slope value instead of the prediction.
