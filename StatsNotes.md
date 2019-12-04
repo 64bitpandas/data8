@@ -10,6 +10,11 @@ The stats part of data science
 **Complement Rule:** P(A) = 1 - P(A⁻¹)
  - The **Complement (A⁻¹)** is the event(s) that occurs if A does NOT occur.
 
+**Bayes' Rule:** P(A|B) = P(B|A) * P(A) / P(B)
+   - Prior probability is P(A)
+   - Posterior probability is P(B|A)
+   - Use tree diagrams to calculate posterior probabilities easily
+
 ## Sampling
  - **Deterministic Sample:** No chance involved, systematic selection used instead
     - Example: Using school directory and selecting every 10th person by alphabetical order, choosing flights that only go to New York, etc.
